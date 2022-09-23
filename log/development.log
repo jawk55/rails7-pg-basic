@@ -199,3 +199,192 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 16ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 6913)
 
 
+Started GET "/" for 127.0.0.1 at 2022-09-23 13:38:39 -0300
+  [1m[35m (5814.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20220923163749_create_reservations.rb
+
+
+):
+  
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7240387939798881735)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReservations (20220923163749)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "detail" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220923163749"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-23 16:38:59.209225"], ["updated_at", "2022-09-23 16:38:59.209225"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(7240387939798881735)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-09-23 13:39:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant ResrevationsController
+Did you mean?  ReservationsController):
+  
+Started GET "/" for 127.0.0.1 at 2022-09-23 13:39:33 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReservationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ app/views/reservations/index.html.erb:12
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 32)
+  Rendered reservations/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2282)
+  Rendered layout layouts/application.html.erb (Duration: 402.9ms | Allocations: 140351)
+Completed 200 OK in 413ms (Views: 404.5ms | ActiveRecord: 0.8ms | Allocations: 147118)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2022-09-23 13:39:38 -0300
+Processing by ReservationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/_form.html.erb (Duration: 21.5ms | Allocations: 5068)
+  Rendered reservations/new.html.erb within layouts/application (Duration: 23.1ms | Allocations: 5435)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 12111)
+Completed 200 OK in 67ms (Views: 32.0ms | ActiveRecord: 7.8ms | Allocations: 27353)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2022-09-23 13:39:43 -0300
+Processing by ReservationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"detail"=>""}, "commit"=>"Create Reservation"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `block in create'
+  [1m[36mReservation Create (1.2ms)[0m  [1m[32mINSERT INTO "reservations" ("detail", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["detail", ""], ["created_at", "2022-09-23 16:39:43.648951"], ["updated_at", "2022-09-23 16:39:43.648951"]]
+  ↳ app/controllers/reservations_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3000/reservations/1
+Completed 302 Found in 14ms (ActiveRecord: 2.9ms | Allocations: 4166)
+
+
+Started GET "/reservations/1" for 127.0.0.1 at 2022-09-23 13:39:43 -0300
+Processing by ReservationsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:63:in `set_reservation'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/show.html.erb within layouts/application
+  Rendered reservations/_reservation.html.erb (Duration: 1.1ms | Allocations: 306)
+  Rendered reservations/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2145)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 8806)
+Completed 200 OK in 31ms (Views: 21.0ms | ActiveRecord: 1.2ms | Allocations: 11998)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2022-09-23 13:39:46 -0300
+Processing by ReservationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ app/views/reservations/index.html.erb:12
+  Rendered collection of reservations/_reservation.html.erb [1 times] (Duration: 2.2ms | Allocations: 375)
+  Rendered reservations/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1732)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 8308)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.8ms | Allocations: 8681)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2022-09-23 13:39:50 -0300
+Processing by ReservationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/_form.html.erb (Duration: 3.6ms | Allocations: 1173)
+  Rendered reservations/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1272)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 7833)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 8176)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2022-09-23 13:39:53 -0300
+Processing by ReservationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"detail"=>"sadasd"}, "commit"=>"Create Reservation"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `block in create'
+  [1m[36mReservation Create (1.0ms)[0m  [1m[32mINSERT INTO "reservations" ("detail", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["detail", "sadasd"], ["created_at", "2022-09-23 16:39:53.593463"], ["updated_at", "2022-09-23 16:39:53.593463"]]
+  ↳ app/controllers/reservations_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3000/reservations/2
+Completed 302 Found in 15ms (ActiveRecord: 3.0ms | Allocations: 2754)
+
+
+Started GET "/reservations/2" for 127.0.0.1 at 2022-09-23 13:39:53 -0300
+Processing by ReservationsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mReservation Load (0.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:63:in `set_reservation'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/show.html.erb within layouts/application
+  Rendered reservations/_reservation.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered reservations/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 946)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 7623)
+Completed 200 OK in 28ms (Views: 22.4ms | ActiveRecord: 0.9ms | Allocations: 8451)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2022-09-23 13:39:55 -0300
+Processing by ReservationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ app/views/reservations/index.html.erb:12
+  Rendered collection of reservations/_reservation.html.erb [2 times] (Duration: 1.0ms | Allocations: 220)
+  Rendered reservations/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1434)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 8007)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.7ms | Allocations: 8337)
+
+
