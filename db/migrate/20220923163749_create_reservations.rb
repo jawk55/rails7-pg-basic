@@ -1,9 +1,8 @@
 class CreateReservations < ActiveRecord::Migration[7.0]
   def change
     create_table :reservations do |t|
-      t.text :detail
-
-      t.timestamps
+      t.text :detail # :)
+      t.timestamps # :)
     end
   end
 end
